@@ -3,9 +3,10 @@ import appointmentsRouter from './appointments.routes';
 
 const routes = Router();
 
-routes.use('/appointments',appointmentsRouter);
+routes.use('/appointments', appointmentsRouter);
 
-routes.get('/', (request, response) => response.json({ message: 'Hello world' }));
-
+routes.get('/', (request, response) =>
+  response.json({ message: 'Hello world' }),
+);
 
 export default routes;
