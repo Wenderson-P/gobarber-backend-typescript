@@ -22,7 +22,10 @@ module.exports = {
     'prettier'
   ],
   rules: {
-    "prettier/prettier" : "error",
+    'no-unused-vars' : 'warn',
+    '@typescript-eslint/camelcase' : 'off',
+    'camelcase' : 'off',
+    'prettier/prettier' : 'error',
     'class-methods-use-this': 'off',
     'import/extensions': [
       'error',
