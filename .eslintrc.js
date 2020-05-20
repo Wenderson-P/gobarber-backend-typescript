@@ -22,6 +22,9 @@ module.exports = {
     'prettier'
   ],
   rules: {
+    'no-unused-vars': ["error",{
+      "argsIgnorePattern" : '_'
+    }],
     'no-unused-vars' : 'warn',
     '@typescript-eslint/camelcase' : 'off',
     'camelcase' : 'off',
