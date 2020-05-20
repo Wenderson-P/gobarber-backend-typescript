@@ -4,21 +4,17 @@ import CreateSessionService from '../services/CreateSessionService';
 const SessionsRouter = Router();
 
 SessionsRouter.post('/', async (request, response) => {
-  try {
-    const { email, password } = request.body;
-    const createUser = new CreateSessionService();
+  const { email, password } = request.body;
+  const createUser = new CreateSessionService();
 
-    const { user, token } = await createUser.execute({
-      email,
-      password,
-    });
+  const { user, token } = await createUser.execute({
+    email,
+    password,
+  });
 
-    delete user.password;
+  delete user.password;
 
-    return response.json({ user, token });
-  } catch (error) {
-    return response.status(400).json({ error: error.message });
-  }
+  return response.json({ user, token });
 });
 
 export default SessionsRouter;
